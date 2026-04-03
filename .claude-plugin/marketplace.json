@@ -1,0 +1,44 @@
+{
+    "name": "kiennt-agent-skills",
+    "owner": {
+        "name": "Kien Nguyen",
+        "email": "kiennt2609@gmail.com"
+    },
+    "metadata": {
+        "description": "A collection of Agent Skills for AI coding agents including conventional commits, code review, security analysis, system performance, and more",
+        "version": "1.0.0"
+    },
+    "plugins": [
+        {
+            "name": "development-skills",
+            "description": "Collection of development skills including conventional commits, code reviewer, security expert, and system performance analysis",
+            "source": "./",
+            "strict": false,
+            "skills": [
+                "./skills/conventional-commits",
+                "./skills/code-reviewer",
+                "./skills/security-expert",
+                "./skills/system-performance"
+            ]
+        },
+        {
+            "name": "documentation-skills",
+            "description": "Documentation generation skills including deep-wiki for comprehensive codebase documentation",
+            "source": "./",
+            "strict": false,
+            "skills": [
+                "./skills/deep-wiki"
+            ]
+        },
+        {
+            "name": "skill-authoring",
+            "description": "Skills for creating and auditing Agent Skills including skill-creator and skill-auditor",
+            "source": "./",
+            "strict": false,
+            "skills": [
+                "./skills/skill-creator",
+                "./skills/skill-auditor"
+            ]
+        }
+    ]
+}
