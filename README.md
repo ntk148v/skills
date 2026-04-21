@@ -104,6 +104,58 @@ Identify and prevent security vulnerabilities using OWASP Top 10, secure coding 
 
 **Use when:** Analyzing security vulnerabilities, conducting security reviews, or checking for common vulnerabilities.
 
+### 8. frontend-design
+
+Design and implement distinctive, production-ready frontend interfaces with strong aesthetic direction.
+
+**Features:**
+
+- Design thinking + execution approach
+- Purpose-driven visual choices
+- Support for HTML/CSS/JS, React, Vue, and more
+- Accessibility and performance considerations
+
+**Use when:** Creating or restyling web pages, components, dashboards, or application UIs.
+
+### 9. native-web-search
+
+Trigger native web search for fast internet research with concise summaries and full source URLs.
+
+**Features:**
+
+- Fast model with native web search
+- Concise research summaries
+- Explicit full source URLs
+- Command-line interface
+
+**Use when:** Performing internet research, finding current information, or getting quick answers with sources.
+
+### 10. summarize
+
+Fetch URLs or convert local files (PDF/DOCX/HTML/etc.) into Markdown for analysis, optionally with summarization.
+
+**Features:**
+
+- Convert web pages to Markdown
+- Binary document conversion (PDF/DOCX/PPTX)
+- Optional summarization
+- Supports various file formats
+
+**Use when:** Converting documents for analysis, pulling down web pages as Markdown, or summarizing long documents.
+
+### 11. uv
+
+Use `uv` instead of pip/python/venv for Python package and environment management.
+
+**Features:**
+
+- Fast Python package installer
+- Inline script dependencies
+- Virtual environment management
+- Script execution with `uv run`
+
+**Use when:** Running Python scripts, managing dependencies, or creating reproducible Python environments.
+
 ## Installation
 
 ### Claude Code
@@ -134,6 +186,10 @@ cp -r skills/system-performance ~/.claude/skills/
 cp -r skills/skill-auditor ~/.claude/skills/
 cp -r skills/code-reviewer ~/.claude/skills/
 cp -r skills/security-expert ~/.claude/skills/
+cp -r skills/frontend-design ~/.claude/skills/
+cp -r skills/native-web-search ~/.claude/skills/
+cp -r skills/summarize ~/.claude/skills/
+cp -r skills/uv ~/.claude/skills/
 ```
 
 #### Option 3: Symlink (Recommended for Development)
@@ -168,14 +224,17 @@ claude plugin install ntk148v/skills
 #### Install Individual Packages
 
 ```bash
-# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance)
+# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance, uv)
 claude plugin install ntk148v/skills#development-skills
 
-# Install documentation skills (deep-wiki)
+# Install documentation skills (deep-wiki, summarize)
 claude plugin install ntk148v/skills#documentation-skills
 
 # Install skill authoring skills (skill-creator, skill-auditor)
 claude plugin install ntk148v/skills#skill-authoring
+
+# Install utility skills (frontend-design, native-web-search)
+claude plugin install ntk148v/skills#utility-skills
 ```
 
 #### Verify Installation
@@ -194,6 +253,10 @@ ls ~/.claude/skills/
 # deep-wiki/
 # skill-creator/
 # skill-auditor/
+# frontend-design/
+# native-web-search/
+# summarize/
+# uv/
 ```
 
 ### Cursor
@@ -230,9 +293,16 @@ ls ~/.claude/skills/
 
 # Expected output:
 # conventional-commits/
-# writing-skills/
 # deep-wiki/
 # system-performance/
+# code-reviewer/
+# security-expert/
+# skill-auditor/
+# skill-creator/
+# frontend-design/
+# native-web-search/
+# summarize/
+# uv/
 ```
 
 ### OpenCode
@@ -243,9 +313,16 @@ ls .opencode/skills/
 
 # Expected output:
 # conventional-commits/
-# writing-skills/
 # deep-wiki/
 # system-performance/
+# code-reviewer/
+# security-expert/
+# skill-auditor/
+# skill-creator/
+# frontend-design/
+# native-web-search/
+# summarize/
+# uv/
 ```
 
 ## Usage
@@ -261,7 +338,7 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 "Write a commit message following conventional commits format"
 ```
 
-**Writing Skills:**
+**Skill Creator:**
 
 ```
 "Create a new skill for API documentation"
@@ -283,17 +360,50 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 "Use the USE method to check for bottlenecks"
 ```
 
+**Frontend Design:**
+
+```
+"Create a landing page for my product"
+"Design a dashboard with charts"
+"Improve the typography on this page"
+```
+
+**Native Web Search:**
+
+```
+"Search for the latest React news"
+"Find information about Docker containers"
+"Look up the newest Python release"
+```
+
+**Summarize:**
+
+```
+"Summarize this article"
+"Convert this PDF to Markdown"
+"Turn this URL into readable text"
+```
+
+**UV:**
+
+```
+"Run this Python script with dependencies"
+"Add requests to the project"
+"Create a new Python environment"
+
 ## Skill Structure
 
 Each skill follows the Agent Skills specification:
 
 ```
+
 skill-name/
-├── SKILL.md          # Required: metadata + instructions
-├── scripts/          # Optional: executable code
-├── references/       # Optional: documentation
-└── assets/           # Optional: templates, resources
-```
+├── SKILL.md # Required: metadata + instructions
+├── scripts/ # Optional: executable code
+├── references/ # Optional: documentation
+└── assets/ # Optional: templates, resources
+
+````
 
 ### SKILL.md Format
 
@@ -313,14 +423,14 @@ description: Use when [specific triggering conditions]
 
 ## Implementation
 [Detailed instructions]
-```
+````
 
 ## Contributing
 
 Contributions are welcome! Please follow these guidelines:
 
 1. **Follow the Agent Skills specification** - Ensure your skill follows the [official specification](https://agentskills.io/specification)
-2. **Test your skill** - Use the writing-skills methodology to test your skill before submitting
+2. **Test your skill** - Use the skill-creator methodology to test your skill before submitting
 3. **Document thoroughly** - Include clear descriptions, examples, and use cases
 4. **Keep it focused** - Each skill should address a specific domain or workflow
 
@@ -356,7 +466,7 @@ ln -s $(pwd)/skills ~/.claude/skills
 
 ### Testing Skills
 
-Follow the TDD approach from writing-skills:
+Follow the TDD approach from skill-creator:
 
 1. **RED**: Run baseline scenario WITHOUT skill
 2. **GREEN**: Write skill addressing baseline failures
@@ -369,6 +479,8 @@ Follow the TDD approach from writing-skills:
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Brendan Gregg's Performance Analysis](https://www.brendangregg.com/methodology.html)
 - [Deep Wiki](https://deepwiki.com)
+- [UV Package Manager](https://github.com/astral-sh/uv)
+- [Markitdown](https://github.com/mrowa44/markitdown)
 
 ## Supported Platforms
 
@@ -402,19 +514,4 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## Changelog
 
-### v1.0.0 (2026-04-03)
-
-**Added:**
-
-- conventional-commits skill
-- writing-skills skill
-- deep-wiki skill
-- system-performance skill
-- Installation documentation for multiple platforms
-
-**Features:**
-
-- Full Agent Skills specification compliance
-- Comprehensive documentation for each skill
-- Cross-platform compatibility
-- TDD-based skill development methodology
+See [CHANGELOG.md](CHANGELOG.md) for detailed changelog.
