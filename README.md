@@ -156,6 +156,45 @@ Use `uv` instead of pip/python/venv for Python package and environment managemen
 
 **Use when:** Running Python scripts, managing dependencies, or creating reproducible Python environments.
 
+### 12. caveman
+
+Ultra-compressed communication mode to save tokens while keeping technical accuracy.
+
+**Features:**
+
+- Compressed communication style
+- Persistence across turns
+- Rules for dropping articles and filler
+- Auto-clarity exceptions for critical info
+
+**Use when:** Saving tokens, being brief, or when requested for "caveman mode".
+
+### 13. grill-me
+
+Interview the user relentlessly about a plan or design until reaching shared understanding.
+
+**Features:**
+
+- Relentless questioning for shared understanding
+- Decision tree exploration
+- One-at-a-time questions
+- Codebase exploration for answers
+
+**Use when:** Stress-testing a plan, getting grilled on design, or user says "grill me".
+
+### 14. handoff
+
+Compact the current conversation into a handoff document for another agent.
+
+**Features:**
+
+- Summarizes current conversation
+- Suggests skills for next session
+- Avoids duplication of existing artifacts
+- Tailored to next session's focus
+
+**Use when:** Moving to a new session or handing off work to another agent.
+
 ## Installation
 
 ### Claude Code
@@ -190,6 +229,10 @@ cp -r skills/frontend-design ~/.claude/skills/
 cp -r skills/native-web-search ~/.claude/skills/
 cp -r skills/summarize ~/.claude/skills/
 cp -r skills/uv ~/.claude/skills/
+cp -r skills/caveman ~/.claude/skills/
+cp -r skills/grill-me ~/.claude/skills/
+cp -r skills/grill-with-docs ~/.claude/skills/
+cp -r skills/handoff ~/.claude/skills/
 ```
 
 #### Option 3: Symlink (Recommended for Development)
@@ -224,7 +267,7 @@ claude plugin install ntk148v/skills
 #### Install Individual Packages
 
 ```bash
-# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance, uv)
+# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance, uv, grill-me, grill-with-docs)
 claude plugin install ntk148v/skills#development-skills
 
 # Install documentation skills (deep-wiki, summarize)
@@ -233,7 +276,7 @@ claude plugin install ntk148v/skills#documentation-skills
 # Install skill authoring skills (skill-creator, skill-auditor)
 claude plugin install ntk148v/skills#skill-authoring
 
-# Install utility skills (frontend-design, native-web-search)
+# Install utility skills (frontend-design, native-web-search, caveman, handoff)
 claude plugin install ntk148v/skills#utility-skills
 ```
 
@@ -257,6 +300,10 @@ ls ~/.claude/skills/
 # native-web-search/
 # summarize/
 # uv/
+# caveman/
+# grill-me/
+# grill-with-docs/
+# handoff/
 ```
 
 ### Cursor
@@ -303,6 +350,10 @@ ls ~/.claude/skills/
 # native-web-search/
 # summarize/
 # uv/
+# caveman/
+# grill-me/
+# grill-with-docs/
+# handoff/
 ```
 
 ### OpenCode
@@ -323,6 +374,10 @@ ls .opencode/skills/
 # native-web-search/
 # summarize/
 # uv/
+# caveman/
+# grill-me/
+# grill-with-docs/
+# handoff/
 ```
 
 ## Usage
@@ -390,6 +445,38 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 "Run this Python script with dependencies"
 "Add requests to the project"
 "Create a new Python environment"
+```
+
+**Caveman:**
+
+```
+"Speak like caveman"
+"Use caveman mode to save tokens"
+"Talk like caveman"
+```
+
+**Grill Me:**
+
+```
+"Grill me on this design"
+"Stress test my plan"
+"Ask me questions about this architecture"
+```
+
+**Grill with Docs:**
+
+```
+"Grill me with docs on this plan"
+"Review this against our domain model"
+"Check if this plan follows our ADRs"
+```
+
+**Handoff:**
+
+```
+"Create a handoff for the next session"
+"Summarize this conversation for another agent"
+```
 
 ## Skill Structure
 
@@ -403,7 +490,7 @@ skill-name/
 ├── references/ # Optional: documentation
 └── assets/ # Optional: templates, resources
 
-````
+```
 
 ### SKILL.md Format
 
@@ -423,7 +510,7 @@ description: Use when [specific triggering conditions]
 
 ## Implementation
 [Detailed instructions]
-````
+```
 
 ## Contributing
 

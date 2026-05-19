@@ -1,0 +1,36 @@
+{
+    "name": "kiennt-skills",
+    "description": "A collection of Skills for AI coding agents including conventional commits, code review, security analysis, system performance, and more",
+    "version": "1.1.0",
+    "displayName": "Kiennt's Skills",
+    "author": {
+        "name": "Kien Nguyen",
+        "email": "kiennt2609@gmail.com"
+    },
+    "homepage": "https://github.com/ntk148v/skills",
+    "repository": "https://github.com/ntk148v/skills",
+    "license": "MIT",
+    "keywords": [
+        "agent-skills",
+        "claude-code",
+        "development-tools",
+        "automation"
+    ],
+    "skills": [
+        "./skills/conventional-commits",
+        "./skills/code-reviewer",
+        "./skills/security-expert",
+        "./skills/system-performance",
+        "./skills/deep-wiki",
+        "./skills/skill-creator",
+        "./skills/skill-auditor",
+        "./skills/frontend-design",
+        "./skills/native-web-search",
+        "./skills/summarize",
+        "./skills/uv",
+        "./skills/caveman",
+        "./skills/grill-me",
+        "./skills/grill-with-docs",
+        "./skills/handoff"
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "name": "kiennt-agent-skills",
+    "name": "kiennt-skills",
     "owner": {
         "name": "Kien Nguyen",
         "email": "kiennt2609@gmail.com"
@@ -11,23 +11,27 @@
     "plugins": [
         {
             "name": "development-skills",
-            "description": "Collection of development skills including conventional commits, code reviewer, security expert, and system performance analysis",
+            "description": "Collection of development skills including conventional commits, code reviewer, security expert, system performance analysis, uv, and grilling tools",
             "source": "./",
             "strict": false,
             "skills": [
                 "./skills/conventional-commits",
                 "./skills/code-reviewer",
                 "./skills/security-expert",
-                "./skills/system-performance"
+                "./skills/system-performance",
+                "./skills/uv",
+                "./skills/grill-me",
+                "./skills/grill-with-docs"
             ]
         },
         {
             "name": "documentation-skills",
-            "description": "Documentation generation skills including deep-wiki for comprehensive codebase documentation",
+            "description": "Documentation generation skills including deep-wiki and summarize",
             "source": "./",
             "strict": false,
             "skills": [
-                "./skills/deep-wiki"
+                "./skills/deep-wiki",
+                "./skills/summarize"
             ]
         },
         {
@@ -38,6 +42,18 @@
             "skills": [
                 "./skills/skill-creator",
                 "./skills/skill-auditor"
+            ]
+        },
+        {
+            "name": "utility-skills",
+            "description": "Utility skills including frontend design, native web search, caveman mode, and handoff tools",
+            "source": "./",
+            "strict": false,
+            "skills": [
+                "./skills/frontend-design",
+                "./skills/native-web-search",
+                "./skills/caveman",
+                "./skills/handoff"
             ]
         }
     ]
