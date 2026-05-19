@@ -1,7 +1,7 @@
 ---
 name: uv
 description: "Use `uv` instead of pip/python/venv. Run scripts with `uv run script.py`, add deps with `uv add`, use inline script metadata for standalone scripts."
-license: stolen from https://github.com/mitsuhiko/agent-stuff
+license: https://github.com/mitsuhiko/agent-stuff
 ---
 
 ## Quick Reference

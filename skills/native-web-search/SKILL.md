@@ -1,7 +1,7 @@
 ---
 name: native-web-search
 description: "Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs."
-license: stolen from https://github.com/mitsuhiko/agent-stuff
+license: https://github.com/mitsuhiko/agent-stuff
 ---
 
 # Native Web Search
