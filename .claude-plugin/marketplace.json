@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "A collection of Agent Skills for AI coding agents including conventional commits, code review, security analysis, system performance, and more",
-        "version": "1.0.0"
+        "version": "1.2.0"
     },
     "plugins": [
         {
@@ -20,8 +20,7 @@
                 "./skills/security-expert",
                 "./skills/system-performance",
                 "./skills/uv",
-                "./skills/grill-me",
-                "./skills/grill-with-docs"
+                "./skills/grill"
             ]
         },
         {
@@ -36,12 +35,11 @@
         },
         {
             "name": "skill-authoring",
-            "description": "Skills for creating and auditing Agent Skills including skill-creator and skill-auditor",
+            "description": "Skills for creating and auditing Agent Skills",
             "source": "./",
             "strict": false,
             "skills": [
-                "./skills/skill-creator",
-                "./skills/skill-auditor"
+                "./skills/skill-authoring"
             ]
         },
         {

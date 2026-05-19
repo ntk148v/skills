@@ -21,18 +21,18 @@ Follow the [Conventional Commits specification](https://www.conventionalcommits.
 
 **Use when:** Creating git commits, writing commit messages, or working with semantic versioning.
 
-### 2. skill-creator
+### 2. skill-authoring
 
-Create and test Agent Skills following the Test-Driven Development methodology.
+Create, edit, audit, and validate Agent Skills following TDD and specification compliance.
 
 **Features:**
 
-- TDD approach to skill creation
-- Skill validation and testing
-- Best practices for skill documentation
-- Anti-patterns to avoid
+- TDD approach to skill creation (RED-GREEN-REFACTOR)
+- Specification compliance validation
+- Duplicate detection and resolution
+- Best practices for documentation and token efficiency
 
-**Use when:** Creating new skills, editing existing skills, or verifying skills work before deployment.
+**Use when:** Creating new skills, auditing existing ones, or ensuring specification compliance.
 
 ### 3. deep-wiki
 
@@ -62,21 +62,7 @@ Apply Brendan Gregg's performance analysis methodologies for investigating syste
 
 **Use when:** Analyzing system performance, debugging performance issues, or investigating bottlenecks.
 
-### 5. skill-auditor
-
-Find and remove duplicate skills across installed skill directories, validate skill quality, and ensure specification compliance.
-
-**Features:**
-
-- Duplicate skill detection
-- Specification compliance validation
-- Quality checks and warnings
-- Automated audit reports
-- Cleanup commands
-
-**Use when:** Auditing skills for duplicates, validating skill quality, or checking specification compliance.
-
-### 6. code-reviewer
+### 5. code-reviewer
 
 Conduct thorough code reviews with systematic checks for code quality, bugs, security issues, performance problems, and adherence to best practices.
 
@@ -90,7 +76,7 @@ Conduct thorough code reviews with systematic checks for code quality, bugs, sec
 
 **Use when:** Reviewing pull requests, conducting code reviews, or analyzing code quality.
 
-### 7. security-expert
+### 6. security-expert
 
 Identify and prevent security vulnerabilities using OWASP Top 10, secure coding practices, and systematic vulnerability analysis.
 
@@ -104,7 +90,7 @@ Identify and prevent security vulnerabilities using OWASP Top 10, secure coding 
 
 **Use when:** Analyzing security vulnerabilities, conducting security reviews, or checking for common vulnerabilities.
 
-### 8. frontend-design
+### 7. frontend-design
 
 Design and implement distinctive, production-ready frontend interfaces with strong aesthetic direction.
 
@@ -117,7 +103,7 @@ Design and implement distinctive, production-ready frontend interfaces with stro
 
 **Use when:** Creating or restyling web pages, components, dashboards, or application UIs.
 
-### 9. native-web-search
+### 8. native-web-search
 
 Trigger native web search for fast internet research with concise summaries and full source URLs.
 
@@ -130,7 +116,7 @@ Trigger native web search for fast internet research with concise summaries and 
 
 **Use when:** Performing internet research, finding current information, or getting quick answers with sources.
 
-### 10. summarize
+### 9. summarize
 
 Fetch URLs or convert local files (PDF/DOCX/HTML/etc.) into Markdown for analysis, optionally with summarization.
 
@@ -143,7 +129,7 @@ Fetch URLs or convert local files (PDF/DOCX/HTML/etc.) into Markdown for analysi
 
 **Use when:** Converting documents for analysis, pulling down web pages as Markdown, or summarizing long documents.
 
-### 11. uv
+### 10. uv
 
 Use `uv` instead of pip/python/venv for Python package and environment management.
 
@@ -156,7 +142,7 @@ Use `uv` instead of pip/python/venv for Python package and environment managemen
 
 **Use when:** Running Python scripts, managing dependencies, or creating reproducible Python environments.
 
-### 12. caveman
+### 11. caveman
 
 Ultra-compressed communication mode to save tokens while keeping technical accuracy.
 
@@ -169,9 +155,9 @@ Ultra-compressed communication mode to save tokens while keeping technical accur
 
 **Use when:** Saving tokens, being brief, or when requested for "caveman mode".
 
-### 13. grill-me
+### 12. grill
 
-Interview the user relentlessly about a plan or design until reaching shared understanding.
+Interview the user relentlessly about a plan, design, or domain model until reaching shared understanding.
 
 **Features:**
 
@@ -182,7 +168,7 @@ Interview the user relentlessly about a plan or design until reaching shared und
 
 **Use when:** Stress-testing a plan, getting grilled on design, or user says "grill me".
 
-### 14. handoff
+### 13. handoff
 
 Compact the current conversation into a handoff document for another agent.
 
@@ -219,10 +205,9 @@ mkdir -p ~/.claude/skills
 
 # Copy individual skills
 cp -r skills/conventional-commits ~/.claude/skills/
-cp -r skills/skill-creator ~/.claude/skills/
+cp -r skills/skill-authoring ~/.claude/skills/
 cp -r skills/deep-wiki ~/.claude/skills/
 cp -r skills/system-performance ~/.claude/skills/
-cp -r skills/skill-auditor ~/.claude/skills/
 cp -r skills/code-reviewer ~/.claude/skills/
 cp -r skills/security-expert ~/.claude/skills/
 cp -r skills/frontend-design ~/.claude/skills/
@@ -230,8 +215,7 @@ cp -r skills/native-web-search ~/.claude/skills/
 cp -r skills/summarize ~/.claude/skills/
 cp -r skills/uv ~/.claude/skills/
 cp -r skills/caveman ~/.claude/skills/
-cp -r skills/grill-me ~/.claude/skills/
-cp -r skills/grill-with-docs ~/.claude/skills/
+cp -r skills/grill ~/.claude/skills/
 cp -r skills/handoff ~/.claude/skills/
 ```
 
@@ -267,13 +251,13 @@ claude plugin install ntk148v/skills
 #### Install Individual Packages
 
 ```bash
-# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance, uv, grill-me, grill-with-docs)
+# Install development skills (conventional-commits, code-reviewer, security-expert, system-performance, uv, grill)
 claude plugin install ntk148v/skills#development-skills
 
 # Install documentation skills (deep-wiki, summarize)
 claude plugin install ntk148v/skills#documentation-skills
 
-# Install skill authoring skills (skill-creator, skill-auditor)
+# Install skill authoring skills (skill-authoring)
 claude plugin install ntk148v/skills#skill-authoring
 
 # Install utility skills (frontend-design, native-web-search, caveman, handoff)
@@ -294,15 +278,13 @@ ls ~/.claude/skills/
 # security-expert/
 # system-performance/
 # deep-wiki/
-# skill-creator/
-# skill-auditor/
+# skill-authoring/
 # frontend-design/
 # native-web-search/
 # summarize/
 # uv/
 # caveman/
-# grill-me/
-# grill-with-docs/
+# grill/
 # handoff/
 ```
 
@@ -344,15 +326,13 @@ ls ~/.claude/skills/
 # system-performance/
 # code-reviewer/
 # security-expert/
-# skill-auditor/
-# skill-creator/
+# skill-authoring/
 # frontend-design/
 # native-web-search/
 # summarize/
 # uv/
 # caveman/
-# grill-me/
-# grill-with-docs/
+# grill/
 # handoff/
 ```
 
@@ -368,15 +348,13 @@ ls .opencode/skills/
 # system-performance/
 # code-reviewer/
 # security-expert/
-# skill-auditor/
-# skill-creator/
+# skill-authoring/
 # frontend-design/
 # native-web-search/
 # summarize/
 # uv/
 # caveman/
-# grill-me/
-# grill-with-docs/
+# grill/
 # handoff/
 ```
 
@@ -393,11 +371,12 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 "Write a commit message following conventional commits format"
 ```
 
-**Skill Creator:**
+**Skill Authoring:**
 
 ```
 "Create a new skill for API documentation"
-"Help me write a skill for database migrations"
+"Audit my skills for duplicates"
+"Verify this skill follows the specification"
 ```
 
 **Deep Wiki:**
@@ -455,20 +434,12 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 "Talk like caveman"
 ```
 
-**Grill Me:**
+**Grill:**
 
 ```
 "Grill me on this design"
 "Stress test my plan"
 "Ask me questions about this architecture"
-```
-
-**Grill with Docs:**
-
-```
-"Grill me with docs on this plan"
-"Review this against our domain model"
-"Check if this plan follows our ADRs"
 ```
 
 **Handoff:**
@@ -483,13 +454,11 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 Each skill follows the Agent Skills specification:
 
 ```
-
 skill-name/
 ├── SKILL.md # Required: metadata + instructions
 ├── scripts/ # Optional: executable code
 ├── references/ # Optional: documentation
 └── assets/ # Optional: templates, resources
-
 ```
 
 ### SKILL.md Format
@@ -517,7 +486,7 @@ description: Use when [specific triggering conditions]
 Contributions are welcome! Please follow these guidelines:
 
 1. **Follow the Agent Skills specification** - Ensure your skill follows the [official specification](https://agentskills.io/specification)
-2. **Test your skill** - Use the skill-creator methodology to test your skill before submitting
+2. **Test your skill** - Use the skill-authoring methodology to test your skill before submitting
 3. **Document thoroughly** - Include clear descriptions, examples, and use cases
 4. **Keep it focused** - Each skill should address a specific domain or workflow
 
@@ -553,7 +522,7 @@ ln -s $(pwd)/skills ~/.claude/skills
 
 ### Testing Skills
 
-Follow the TDD approach from skill-creator:
+Follow the TDD approach from skill-authoring:
 
 1. **RED**: Run baseline scenario WITHOUT skill
 2. **GREEN**: Write skill addressing baseline failures
