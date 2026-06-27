@@ -181,6 +181,20 @@ Compact the current conversation into a handoff document for another agent.
 
 **Use when:** Moving to a new session or handing off work to another agent.
 
+### 14. repo-analyzer
+
+Conduct in-depth analysis of open-source projects and generate professional architecture reports covering business problems, design trade-offs, and industry comparisons.
+
+**Features:**
+
+- Business-perspective analysis (problem first, implementation second)
+- Tiered analysis modes (Quick / Standard / In-depth)
+- External research + project documentation study
+- Parallel subagent deep-dives per module
+- Architecture visualizations (Mermaid diagrams)
+
+**Use when:** Analyzing a project, repository, or framework; comparing two projects; evaluating architecture.
+
 ## Installation
 
 ### Claude Code
@@ -217,6 +231,7 @@ cp -r skills/uv ~/.claude/skills/
 cp -r skills/caveman ~/.claude/skills/
 cp -r skills/grill ~/.claude/skills/
 cp -r skills/handoff ~/.claude/skills/
+cp -r skills/repo-analyzer ~/.claude/skills/
 ```
 
 #### Option 3: Symlink (Recommended for Development)
@@ -286,6 +301,7 @@ ls ~/.claude/skills/
 # caveman/
 # grill/
 # handoff/
+# repo-analyzer/
 ```
 
 ### Cursor
@@ -334,6 +350,7 @@ ls ~/.claude/skills/
 # caveman/
 # grill/
 # handoff/
+# repo-analyzer/
 ```
 
 ### OpenCode
@@ -356,6 +373,7 @@ ls .opencode/skills/
 # caveman/
 # grill/
 # handoff/
+# repo-analyzer/
 ```
 
 ## Usage
@@ -447,6 +465,14 @@ Skills are automatically discovered and loaded by compatible platforms. When you
 ```
 "Create a handoff for the next session"
 "Summarize this conversation for another agent"
+```
+
+**Repo Analyzer:**
+
+```
+"Analyze this GitHub repo's architecture"
+"Compare project X vs project Y"
+"Study how framework Z is implemented"
 ```
 
 ## Skill Structure
